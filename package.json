@@ -8,6 +8,17 @@
     "build": "sucrase ./src -d ./dist --transforms imports",
     "prod": "node dist/index.js"
   },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/washington299/nodeJs-clean-architecture.git"
@@ -25,6 +36,8 @@
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.2",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "sucrase": "^3.12.1"
