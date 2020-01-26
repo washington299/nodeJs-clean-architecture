@@ -1,6 +1,10 @@
 import HttpResponse from "../helpers/http-response";
 
 export default class LoginRouter {
+  constructor(authUseCase) {
+    this.authUseCase = authUseCase;
+  }
+
   route(httpRequest) {
     if (!httpRequest || !httpRequest.body) {
       return HttpResponse.internalServerError();
@@ -13,6 +17,7 @@ export default class LoginRouter {
       return HttpResponse.badRequest("password");
     }
 
+    this.authUseCase.auth(email, password);
     return [];
   }
 }
