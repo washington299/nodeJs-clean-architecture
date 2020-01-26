@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/washington299/nodeJs-clean-architecture#readme",
   "devDependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
     "@types/jest": "^24.9.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
