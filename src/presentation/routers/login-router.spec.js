@@ -18,7 +18,8 @@ const makeAuthUseCase = () => {
 
 const makeEmailValidator = () => {
   class EmailValidatorSpy {
-    isValid() {
+    isValid(email) {
+      this.email = email;
       return this.isEmailValid;
     }
   }
@@ -132,6 +133,19 @@ describe("Login Router", () => {
 
     expect(httpResponse.statusCode).toBe(500);
     expect(httpResponse.body).toEqual(new ServerError());
+  });
+
+  test("Should call EmailValidator with valid credentials", async () => {
+    const { sut, emailValidatorSpy } = makeSut();
+    const httpRequest = {
+      body: {
+        email: "random@mail.com",
+        password: "123"
+      }
+    };
+    await sut.route(httpRequest);
+
+    expect(emailValidatorSpy.email).toBe(httpRequest.body.email);
   });
 
   test("Should return 400 if no password is provided", async () => {
