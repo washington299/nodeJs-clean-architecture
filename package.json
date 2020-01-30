@@ -7,9 +7,10 @@
     "dev": "nodemon -L src/index.js",
     "build": "sucrase ./src -d ./dist --transforms imports",
     "prod": "node dist/index.js",
-    "test": "jest --watchAll --silent",
-    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace",
-    "test:ci": "jest --coverage --silent --noStackTrace"
+    "test": "jest --silent --passWithNoTests",
+    "test:unit": "npm test -- --watch",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage"
   },
 
   "repository": {
