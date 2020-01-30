@@ -8,7 +8,8 @@
     "build": "sucrase ./src -d ./dist --transforms imports",
     "prod": "node dist/index.js",
     "test": "jest --silent --passWithNoTests",
-    "test:unit": "npm test -- --watch",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage"
   },
