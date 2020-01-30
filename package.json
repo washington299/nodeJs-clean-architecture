@@ -9,7 +9,7 @@
     "prod": "node dist/index.js",
     "test": "jest --watchAll --silent",
     "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace",
-    "test:ci": "jest --coverage"
+    "test:ci": "jest --coverage --silent --noStackTrace"
   },
 
   "repository": {
