@@ -1,5 +1,5 @@
 {
-  "name": "nodeJs-clean-architecture",
+  "name": "nodejs-clean-architecture",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,9 +7,10 @@
     "dev": "nodemon -L src/index.js",
     "build": "sucrase ./src -d ./dist --transforms imports",
     "prod": "node dist/index.js",
-    "test": "jest --watchAll",
-    "test:staged": "jest --passWithNoTests"
+    "test": "jest --watchAll --silent",
+    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/washington299/nodeJs-clean-architecture.git"
