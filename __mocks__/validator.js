@@ -1,7 +1,8 @@
 export default {
   isEmailValid: true,
 
-  isEmail() {
+  isEmail(email) {
+    this.email = email;
     return this.isEmailValid;
   }
 };
