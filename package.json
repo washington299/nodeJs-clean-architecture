@@ -13,7 +13,6 @@
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/washington299/nodeJs-clean-architecture.git"
@@ -42,6 +41,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.8.9"
+    "mongoose": "^5.8.9",
+    "validator": "^12.2.0"
   }
 }
