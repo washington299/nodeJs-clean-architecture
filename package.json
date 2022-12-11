@@ -40,7 +40,7 @@
     "sucrase": "^3.12.1"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongoose": "^5.8.9",
     "validator": "^12.2.0"
   }
